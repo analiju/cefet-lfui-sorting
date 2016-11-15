@@ -1,24 +1,13 @@
 #include "ordenacao.h"
-
-
 void Insercao(unsigned long *v, unsigned long n, unsigned long *mov, unsigned long *comp)
 
 {
-
      long i, j, value;
 
-
-
-     for(i = 1; i < n; ++i)
-
-     {
-
+     for(i = 1; i < n; ++i){
  		 (*mov)++;
 
          value = v[i];
-
-
-
          for (j = i - 1; j >= 0 && v[j] > value; --j)
 
          {
@@ -26,8 +15,6 @@ void Insercao(unsigned long *v, unsigned long n, unsigned long *mov, unsigned lo
          	 (*mov)++;
 
              v[j + 1] = v[j];
-
-
 
              //(v[j] > value)
 
@@ -39,14 +26,9 @@ void Insercao(unsigned long *v, unsigned long n, unsigned long *mov, unsigned lo
 
          (*comp)++;
 
-
-
          (*mov)++;
 
          v[j + 1] = value;
 
-
-
      }
-
  }

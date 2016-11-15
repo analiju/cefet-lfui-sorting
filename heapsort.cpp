@@ -1,18 +1,12 @@
 #include "ordenacao.h"
 
-
-
 void Heap(unsigned long *v, long root, long bottom, unsigned long *mov, unsigned long *comp)
 
 {
 
   	unsigned long done, maxChild, temp;
 
-
-
   	done = 0;
-
-
 
 	//primeira comparação do while, comp++
 
@@ -21,7 +15,6 @@ void Heap(unsigned long *v, long root, long bottom, unsigned long *mov, unsigned
   	while ((root*2 <= bottom) && (!done))
 
   	{
-
     	//(root*2 == bottom) é comparação entre chaves, portanto não conta
      	if (root*2 == bottom)
      	{
@@ -34,7 +27,6 @@ void Heap(unsigned long *v, long root, long bottom, unsigned long *mov, unsigned
 			(*comp)++;
 
       		maxChild = root * 2;
-
   		}
 
     	else
@@ -45,8 +37,6 @@ void Heap(unsigned long *v, long root, long bottom, unsigned long *mov, unsigned
       		maxChild = root * 2 + 1;
 
 		}
-
-
 
   		(*comp)++;
 
@@ -71,9 +61,6 @@ void Heap(unsigned long *v, long root, long bottom, unsigned long *mov, unsigned
     	else
 
       		done = 1;
-
-
-
 		//comparação do while, comp++
 		(*comp)++;
 
@@ -81,27 +68,16 @@ void Heap(unsigned long *v, long root, long bottom, unsigned long *mov, unsigned
 
 }
 
-
-
-
-
 void HeapSort(unsigned long *v, unsigned long n, unsigned long *mov, unsigned long *comp)
 {
-
 	long i, temp;
-
-
 
 	for (i = (n / 2)-1; i >= 0; i--)
 
     	Heap(v, i, n, mov, comp);
 
-
-
   	for (i = n-1; i >= 1; i--)
-
   	{
-
   		//mov+3
 
 		(*mov)++;
@@ -114,9 +90,7 @@ void HeapSort(unsigned long *v, unsigned long n, unsigned long *mov, unsigned lo
     	v[i] = temp;
 
     	Heap(v, 0, i-1, mov, comp);
-
   	}
-
 }
 
 
